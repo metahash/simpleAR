@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Object PlacerVC-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ObjectPlacerVC" customModule="simpleAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P2T-lQ-76L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qol-LU-QeC">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
+                            </arscnView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="O7R-SQ-zSo">
+                                <rect key="frame" x="15" y="592" width="276" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJ2-J8-dqP">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="9iU-bN-63A"/>
+                                            <constraint firstAttribute="width" constant="60" id="ej0-LW-6Xv"/>
+                                        </constraints>
+                                        <state key="normal" image="removeButton"/>
+                                        <connections>
+                                            <action selector="onRemovePressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="pJK-Mu-lud"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gf-h3-Zxa">
+                                        <rect key="frame" x="72" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="uis-5q-B3T"/>
+                                            <constraint firstAttribute="width" constant="60" id="yDd-Ve-sdR"/>
+                                        </constraints>
+                                        <state key="normal" image="rotateButton"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAF-s0-ac4">
+                                        <rect key="frame" x="144" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="aiz-Ny-acx"/>
+                                            <constraint firstAttribute="height" constant="60" id="bvR-lh-AqN"/>
+                                        </constraints>
+                                        <state key="normal" image="upArrow"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWO-EQ-WrQ">
+                                        <rect key="frame" x="216" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="OZv-LZ-tru"/>
+                                            <constraint firstAttribute="height" constant="60" id="pve-Fz-oxo"/>
+                                        </constraints>
+                                        <state key="normal" image="downArrow"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abB-4r-O2f">
+                                <rect key="frame" x="299" y="592" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="R7o-t2-aRB"/>
+                                    <constraint firstAttribute="width" constant="60" id="hO5-lp-rIE"/>
+                                </constraints>
+                                <state key="normal" image="plus"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onObjectButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="3bt-bT-JRx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="abB-4r-O2f" firstAttribute="leading" secondItem="O7R-SQ-zSo" secondAttribute="trailing" constant="8" symbolic="YES" id="18T-4j-wyU"/>
+                            <constraint firstItem="abB-4r-O2f" firstAttribute="top" secondItem="O7R-SQ-zSo" secondAttribute="top" id="bRy-Zf-MYt"/>
+                            <constraint firstItem="a6Q-tA-kwb" firstAttribute="bottom" secondItem="O7R-SQ-zSo" secondAttribute="bottom" constant="15" id="bSU-Rj-evS"/>
+                            <constraint firstItem="qol-LU-QeC" firstAttribute="bottom" secondItem="a6Q-tA-kwb" secondAttribute="bottom" id="iCk-yJ-ufI"/>
+                            <constraint firstItem="qol-LU-QeC" firstAttribute="top" secondItem="P2T-lQ-76L" secondAttribute="top" id="kqG-mW-yKO"/>
+                            <constraint firstItem="a6Q-tA-kwb" firstAttribute="trailing" secondItem="abB-4r-O2f" secondAttribute="trailing" constant="15" id="oQk-Em-esE"/>
+                            <constraint firstItem="qol-LU-QeC" firstAttribute="leading" secondItem="a6Q-tA-kwb" secondAttribute="leading" id="okk-Pw-Zu2"/>
+                            <constraint firstItem="O7R-SQ-zSo" firstAttribute="leading" secondItem="a6Q-tA-kwb" secondAttribute="leading" constant="15" id="pKi-8N-cAS"/>
+                            <constraint firstItem="qol-LU-QeC" firstAttribute="trailing" secondItem="a6Q-tA-kwb" secondAttribute="trailing" id="xDu-UO-677"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a6Q-tA-kwb"/>
+                    </view>
+                    <connections>
+                        <outlet property="controls" destination="O7R-SQ-zSo" id="LME-1g-j4r"/>
+                        <outlet property="downBtn" destination="wWO-EQ-WrQ" id="UlO-bU-g96"/>
+                        <outlet property="rotateBtn" destination="0gf-h3-Zxa" id="gtC-Iv-Hcp"/>
+                        <outlet property="sceneView" destination="qol-LU-QeC" id="hW0-Sy-vcn"/>
+                        <outlet property="upBtn" destination="KAF-s0-ac4" id="F1r-hC-o9Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="downArrow" width="48" height="48"/>
+        <image name="plus" width="48" height="48"/>
+        <image name="removeButton" width="48" height="48"/>
+        <image name="rotateButton" width="48" height="48"/>
+        <image name="upArrow" width="48" height="48"/>
+    </resources>
+</document>
