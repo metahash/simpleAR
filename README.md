@@ -1,3 +1,3 @@
 # simpleAR
 
-<a href="https://raw.githubusercontent.com/metahash/simpleAR/master/intro.png">
+<img src="https://github.com/metahash/simpleAR/blob/master/intro.png?raw=true">
